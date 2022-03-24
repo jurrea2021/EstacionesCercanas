@@ -39,7 +39,7 @@ shinyUI(fluidPage(
                       tabPanel(strong("TS Aseguradas"),
                                imageOutput("myImage2",height = 800)
                                ),
-                      tabPanel(strong("TS Aseguradas"),
+                      tabPanel(strong("TS DHIME"),
                                imageOutput("myImage21",height = 800)
                       )
                     )
