@@ -18,7 +18,7 @@ shinyServer(function(input, output) {
       addProviderTiles("Esri.WorldImagery",group = "WorldImagery") %>%
       addProviderTiles(providers$Stamen.TonerLines,group = "WorldImagery") %>%
       addProviderTiles(providers$Stamen.TonerLabels,group = "WorldImagery") %>%
-      addCircleMarkers(data = estClimat2,group = "climaticos",lng = estClimat2$longitud,lat = estClimat2$latitud,color = "#0917F1",layerId = estClimat2$CODIGO) %>% 
+      addCircleMarkers(data = estClimat2,group = "climaticos",lng = estClimat2$longitud,lat = estClimat2$latitud,color = "#0917F1",layerId = estClimat2$CODIGO, label = ~ CODIGO) %>% 
       addLayersControl(
         baseGroups = c("Google Maps","WorldImagery"),
         overlayGroups = c("Climaticos"),
@@ -93,8 +93,8 @@ shinyServer(function(input, output) {
         addProviderTiles(providers$Stamen.TonerLines,group = "WorldImagery") %>%
         addProviderTiles(providers$Stamen.TonerLabels,group = "WorldImagery") %>%
       addPolygons(data = SubRegs1,group = "SZH", weight = 1, smoothFactor = 1,opacity = 1,color = "#6CAB96", fillOpacity = 0.8,label = ~ NOMSZH) %>% 
-      addCircleMarkers(data = estClimat3,group = "climaticos",lng = estClimat3$longitud,lat = estClimat3$latitud,color = "red",layerId = estClimat3$CODIGO) %>% 
-      addCircleMarkers(data = estClimat4,group = "climaticos",lng = estClimat4$longitud,lat = estClimat4$latitud,color = "#0917F1") %>% 
+      addCircleMarkers(data = estClimat3,group = "climaticos",lng = estClimat3$longitud,lat = estClimat3$latitud,color = "red",layerId = estClimat3$CODIGO, label = ~ CODIGO) %>% 
+      addCircleMarkers(data = estClimat4,group = "climaticos",lng = estClimat4$longitud,lat = estClimat4$latitud,color = "#0917F1", label = ~ CODIGO) %>% 
         addLayersControl(
           baseGroups = c("Google Maps","WorldImagery"),
           overlayGroups = c("Climaticos","SZH"),
